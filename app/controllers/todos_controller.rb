@@ -35,6 +35,24 @@ else
 end
 
 end
+
+
+def index
+
+  @todos=Todo.all
+
+end
+
+def destroy
+    @todo=Todo.find(params[:id])
+    @todo.destroy
+    flash[:notice]="todo deleted sucessfully"
+    redirect_to todos_path
+
+
+end
+
+
 private
 
 def todo_params
